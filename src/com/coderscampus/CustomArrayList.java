@@ -52,15 +52,16 @@ public class CustomArrayList<T> implements CustomList {
 
 	@Override
 	public Object remove(int index) throws IndexOutOfBoundsException {
-		if (index < 0 || index > size) {
+		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException("Index out of range " + index);
 		}
-
-		for (int i = index; i < size; i++) {
+		Object removedItem = items[index];
+		for (int i = index; i < size-1; i++) {
 			items[i] = items[i + 1];
 		}
 		size--;
-		return index;
+		items[size] = null;
+		return removedItem;
 	}
 
 }

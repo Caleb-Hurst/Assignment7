@@ -17,6 +17,7 @@ public class CustomListApp  {
 			myCustomList.add("Benjy Ainslie");
 			myCustomList.add("Gabriella Zelda");
 			myCustomList.add("Kaelea Alisha");
+			myCustomList.remove(0);
 			for(int i = 0 ; i < myCustomList.getSize(); i++) {
 				System.out.println(myCustomList.get(i));
 			}

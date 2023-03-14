@@ -73,6 +73,48 @@ class Assignment7Test  {
 	}
 	
 	@Test
+	public void remove_RemovesItemFromEndOfList_True() {
+		var list = new CustomArrayList<>();
+		list.add("Item1");
+		list.add("Item2");
+		list.add("Item3");
+		list.add("Item4");
+		list.add("Item5");
+		list.add("Item6");
+		list.add("Item7");
+		list.add("Item8");
+		list.add("Item9");
+		list.add("Item10");		
+		int origionalSize = list.getSize();
+		Object removedItem = list.remove(origionalSize -1);
+		assertEquals("Item10", removedItem);
+		assertEquals(origionalSize - 1, list.getSize());
+		assertNull(list.get(origionalSize - 1));
+		
+	}
+	@Test
+	public void remove_RemovesItemFromBeginningOfList_True() {
+		var list = new CustomArrayList<>();
+		list.add("Item1");
+		list.add("Item2");
+		list.add("Item3");
+		list.add("Item4");
+		list.add("Item5");
+		list.add("Item6");
+		list.add("Item7");
+		list.add("Item8");
+		list.add("Item9");
+		list.add("Item10");
+		int origionalSize = list.getSize();
+		Object removedItem = list.remove(0);
+		assertEquals("Item1", removedItem);
+		assertEquals(origionalSize - 1, list.getSize());
+		assertEquals("Item2", list.get(0));
+		
+		
+	}
+	
+	@Test
 	public void remove_RemovesAtIndexThatDoesNotExist_False() {
 		var list = new CustomArrayList<>();
 	    list.add(1);
